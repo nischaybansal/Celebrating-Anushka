@@ -1,0 +1,576 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff7fa 0%,
+        #fffdf7 50%,
+        #fff8f0 100%
+    );
+}
+
+.screen{
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+.active{
+    display:flex;
+}
+
+.card{
+
+    width:min(90%,800px);
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+}
+
+h1{
+    line-height:1.4;
+}
+
+.hint{
+
+    margin:20px 0;
+
+    color:#666;
+
+    font-family:'Caveat',cursive;
+
+    font-size:30px;
+}
+
+input{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+}
+
+button{
+
+    margin-top:25px;
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.4s;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+}
+
+.button-row{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+#realBtn{
+
+    background:#ff7ea3;
+    color:white;
+}
+
+#officeBtn{
+
+    background:#dcdcdc;
+}
+
+#questionFeedback{
+
+    margin-top:25px;
+
+    min-height:50px;
+
+    font-family:'Caveat',cursive;
+
+    font-size:34px;
+}
+
+.progress-wrapper{
+
+    width:100%;
+
+    height:26px;
+
+    background:#ececec;
+
+    border-radius:40px;
+
+    margin:35px 0;
+}
+
+#progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:#ff7ea3;
+
+    border-radius:40px;
+
+    transition:1s;
+}
+
+#prepText{
+
+    min-height:80px;
+}
+
+.verdict-box{
+
+    text-align:center;
+}
+
+#stamp{
+
+    border:10px solid crimson;
+
+    color:crimson;
+
+    font-size:50px;
+
+    font-weight:bold;
+
+    padding:40px;
+
+    transform:rotate(-10deg);
+
+    background:white;
+
+    animation:
+    stampIn 1s ease forwards;
+}
+
+.stamp-subtitle{
+
+    margin-top:20px;
+
+    font-size:30px;
+}
+
+.committee{
+
+    margin-top:40px;
+
+    font-size:22px;
+
+    line-height:2;
+}
+
+@keyframes stampIn{
+
+    from{
+
+        transform:
+        rotate(-10deg)
+        scale(.1);
+
+        opacity:0;
+    }
+
+    to{
+
+        transform:
+        rotate(-10deg)
+        scale(1);
+
+        opacity:1;
+    }
+}
+
+/* MEMORY ARCHIVE */
+
+.archive-wrapper{
+
+    text-align:center;
+
+    width:min(90%,900px);
+}
+
+#archivePhoto{
+
+max-width:90vw;
+
+max-height:70vh;
+
+width:auto;
+
+height:auto;
+
+object-fit:contain;
+transition:opacity 2s ease-in-out;
+
+}
+
+#archiveCaption{
+
+    margin-top:30px;
+
+    font-family:'Caveat',cursive;
+
+    font-size:44px;
+
+    min-height:100px;
+}
+#archive-screen{
+
+position:relative;
+
+overflow:hidden;
+}
+#archiveBackground{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-size:cover;
+
+background-position:center;
+
+filter:blur(20px);
+
+transform:scale(1.4);
+
+opacity:0.75;
+
+z-index:0;
+}
+#archiveBackground::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.25);
+}
+.archive-wrapper{
+
+position:relative;
+
+z-index:1;
+}
+
+/* TRANSITION */
+
+#transitionText{
+
+    font-family:'Caveat',cursive;
+
+    font-size:58px;
+}
+
+/* POLAROID BOARD */
+
+.board-wrapper{
+
+    width:100%;
+
+    text-align:center;
+}
+
+#memoryBoardMessage{
+
+    margin-bottom:40px;
+
+    font-family:'Caveat',cursive;
+
+    font-size:56px;
+}
+
+.polaroid-board{
+
+background:
+url("https://www.transparenttextures.com/patterns/cork-board.png");
+
+padding:40px;
+
+border-radius:30px;
+
+min-height:700px;
+}
+
+.polaroid{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    background:white;
+
+    padding:
+    12px
+    12px
+    40px
+    12px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+    transition:.6s;
+    border:8px solid white;
+}
+
+.polaroid:nth-child(odd){
+
+    transform:
+    rotate(-5deg);
+}
+
+.polaroid:nth-child(even){
+
+    transform:
+    rotate(4deg);
+}
+
+.hidden-photo{
+
+opacity:0;
+
+transform:
+scale(.8)
+translateY(20px);
+
+transition:
+all 2.2s ease-in-out;
+}
+
+.show-photo{
+
+opacity:1;
+
+transform:
+scale(1)
+translateY(0);
+
+}
+
+/* GIFT */
+
+.gift-wrapper{
+
+    text-align:center;
+}
+
+#giftBox{
+
+    font-size:160px;
+
+    margin-top:30px;
+
+    cursor:pointer;
+
+    animation:
+    bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+    }
+
+    50%{
+
+        transform:
+        translateY(-20px);
+    }
+}
+
+/* FINAL */
+
+.final-card{
+
+max-width:650px;
+
+margin:auto;
+
+line-height:1.8;
+}
+
+#birthdayMessage p{
+
+margin:25px 0;
+}
+
+#birthdayMessage ul{
+
+list-style:none;
+
+padding:0;
+
+margin:30px 0;
+}
+
+#birthdayMessage li{
+
+margin:15px 0;
+}
+
+#birthdayMessage h2{
+
+margin-top:40px;
+}
+
+#birthdayMessage h3{
+
+margin-top:20px;
+}
+
+#giftButton{
+
+    display:none;
+
+    margin-top:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#ff7ea3;
+
+    padding:18px 30px;
+
+    border-radius:15px;
+
+    font-size:20px;
+}
+
+/* FLOATING ITEMS */
+
+.floating-item{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    animation:
+    floatUp 10s linear forwards;
+}
+
+@keyframes floatUp{
+
+    from{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+        translateY(-120vh);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:28px;
+    }
+
+    #memoryBoardMessage{
+
+        font-size:42px;
+    }
+
+    .polaroid{
+
+        width:150px;
+        height:150px;
+    }
+
+    #archiveCaption{
+
+        font-size:34px;
+    }
+
+    #giftBox{
+
+        font-size:120px;
+    }
+}   
+
+#video-screen{
+    padding:0;
+    background:black;
+}
+
+#finalCompilation{
+    width:100vw;
+    height:100vh;
+    object-fit:contain;
+    background:black;
+}

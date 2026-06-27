@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<section id="entry-screen" class="screen active">
+    <div class="card">
+        <h1>👀 For Your Eyes Only</h1>
+
+        <p>
+            Something special waits ahead.
+        </p>
+
+        <button onclick="enterSite()">
+            Enter →
+        </button>
+    </div>
+</section>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Investigation</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="floating-container"></div>
+
+<!-- PASSWORD -->
+<section id="password-screen" class="screen">
+
+    <div class="card">
+
+        <h1>Access Required</h1>
+
+        <p>
+            Not every celebration announces itself. Some wait to be discovered.
+        </p>
+
+        <p class="hint">
+            I'll even give you a hint:
+            <br><br>
+
+            "It's not a meeting.
+            <br>
+            It's not planned.
+            <br>
+            But it somehow always happens over something hot."
+
+            <br><br>
+
+            What is it? ☕
+        </p>
+
+        <!-- AUDIO BUTTON ADDED -->
+        <button id="audioToggle" onclick="toggleMusic()">
+            🔇 Music Off
+        </button>
+
+        <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter Password">
+
+        <button onclick="checkPassword()">
+            Unlock
+        </button>
+
+        <p id="passwordError"></p>
+
+    </div>
+
+</section>
+
+<!-- QUESTION -->
+<section id="question-screen" class="screen">
+    <div class="card">
+
+        <h1>
+            So the age-old question presents itself...
+            <br><br>
+            Are we your real friends
+            or office friends?
+        </h1>
+
+        <p>
+            You knew this was coming... 😏
+        </p>
+
+        <div class="button-row">
+
+            <button id="realBtn" onclick="realFriends()">
+                 Real Friends
+            </button>
+
+            <button id="officeBtn" onclick="officeFriends()">
+                😒 Office Friends
+            </button>
+
+        </div>
+
+        <div id="questionFeedback"></div>
+
+    </div>
+</section>
+
+<!-- PREPARATION -->
+<section id="prep-screen" class="screen">
+    <div class="card">
+        <h1>🔐 Preparing What’s Meant To Be Revealed</h1>
+
+        <div class="progress-wrapper">
+            <div id="progress-bar"></div>
+        </div>
+
+        <h2 id="prepText"></h2>
+    </div>
+</section>
+
+<!-- VERDICT -->
+<section id="verdict-screen" class="screen">
+    <div class="verdict-box">
+
+        <div id="stamp">
+            VERIFIED
+
+            <div class="stamp-subtitle">
+                OFFICIALLY
+                <br>
+                MILESTONE-WORTHY ✨✨
+            </div>
+        </div>
+
+        <div class="committee">
+            <p>☕ Chai Department — Approved</p>
+            <p>😂 Fun Committee — Approved</p>
+            <p>🎁 Surprise Division — Approved</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- MEMORY ARCHIVE -->
+<section id="archive-screen" class="screen">
+
+    <div id="archiveBackground"></div>
+
+    <div class="archive-wrapper">
+        <img id="archivePhoto" src="photos/photo1.jpeg">
+        <h2 id="archiveCaption"></h2>
+    </div>
+
+</section>
+
+<!-- TRANSITION -->
+<section id="transition-screen" class="screen">
+    <div class="card">
+        <h1 id="transitionText">One Moment...</h1>
+    </div>
+</section>
+
+<!-- MEMORY BOARD -->
+<section id="memory-board-screen" class="screen">
+
+    <div class="board-wrapper">
+
+        <h1 id="memoryBoardMessage">
+            Every photo tells a story.
+        </h1>
+
+        <div class="polaroid-board">
+            <img src="photos/photo1.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo2.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo3.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo4.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo5.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo6.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo7.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo8.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo9.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo10.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo11.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo12.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo13.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo14.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo15.jpeg" class="polaroid hidden-photo">
+            <img src="photos/photo16.jpeg" class="polaroid hidden-photo">
+        </div>
+
+        <button onclick="showCompilation()">
+            One Last Thing →
+        </button>
+
+    </div>
+
+</section>
+
+<section id="video-screen" class="screen">
+    <video id="finalCompilation" playsinline controls>
+        <source src="videos/compilation.mp4" type="video/mp4">
+    </video>
+</section>
+
+<!-- GIFT -->
+<section id="gift-screen" class="screen">
+    <div class="gift-wrapper">
+        <h1>One Last Thing...</h1>
+
+        <div id="giftBox">
+            🎁
+        </div>
+    </div>
+</section>
+
+<!-- FINAL -->
+<section id="final-screen" class="screen">
+    <div class="card final-card">
+
+        <div id="birthdayMessage"></div>
+
+        <a id="giftButton" href="https://drive.google.com/drive/folders/17VCIihex2vb_VGX-UZj0jU6IWoPZaWin?usp=share_link" target="_blank">
+            🎁 Open Your Gift
+        </a>
+
+    </div>
+</section>
+
+<!-- UPDATED AUDIO -->
+<audio id="music" preload="auto" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
